@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena Gvelesiani — Personal & Business Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #06060f;
+    --surface: #0d0d1a;
+    --card: #111124;
+    --border: rgba(99,255,180,0.12);
+    --accent: #39ffb0;
+    --accent2: #a78bfa;
+    --accent3: #f472b6;
+    --text: #e4e4f0;
+    --muted: #6b6b8a;
+    --glow: 0 0 24px rgba(57,255,176,0.25);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(57,255,176,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(57,255,176,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* ── ORBS ── */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: floatOrb 12s ease-in-out infinite;
+  }
+  .orb-1 { width: 500px; height: 500px; background: rgba(57,255,176,0.07); top: -100px; right: -100px; }
+  .orb-2 { width: 400px; height: 400px; background: rgba(167,139,250,0.06); bottom: 100px; left: -100px; animation-delay: -6s; }
+  .orb-3 { width: 300px; height: 300px; background: rgba(244,114,182,0.05); top: 50%; left: 40%; animation-delay: -3s; }
+  @keyframes floatOrb {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.05); }
+  }
+
+  /* ── WRAPPER ── */
+  .wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: rgba(6,6,15,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 0 80px;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .hero-name span {
+    display: block;
+    background: linear-gradient(135deg, var(--text) 30%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-name .last {
+    background: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--muted);
+    margin-bottom: 32px;
+    margin-top: 16px;
+  }
+  .hero-title strong { color: var(--text); font-weight: 500; }
+  .hero-bio {
+    max-width: 580px;
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 48px;
+  }
+  .hero-bio em { color: var(--accent); font-style: normal; font-weight: 500; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.2s;
+    box-shadow: var(--glow);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(57,255,176,0.4); }
+  .btn-ghost {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ── STATS ── */
+  .stats-bar {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 64px;
+    background: var(--card);
+  }
+  .stat {
+    flex: 1;
+    padding: 28px 24px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .stat:last-child { border-right: none; }
+  .stat:hover { background: rgba(57,255,176,0.04); }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 0; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(57,255,176,0.08);
+    border: 1px solid rgba(57,255,176,0.2);
+    padding: 6px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+  .section-h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 56px;
+  }
+
+  /* ── EXPERIENCE ── */
+  .timeline { display: flex; flex-direction: column; gap: 2px; }
+  .job {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 36px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .job::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s;
+    border-radius: 0 2px 2px 0;
+  }
+  .job:hover { border-color: rgba(57,255,176,0.3); transform: translateX(4px); background: rgba(17,17,36,0.9); }
+  .job:hover::before { transform: scaleY(1); }
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .job-company {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+  }
+  .job-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+  .job-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .job-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .job-bullets li {
+    font-size: 0.92rem;
+    color: var(--muted);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .job-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  /* ── SKILLS GRID ── */
+  .skills-universe { display: flex; flex-direction: column; gap: 40px; }
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 16px;
+  }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    padding: 8px 18px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .pill:hover { transform: translateY(-2px); }
+  .pill.ai { border-color: rgba(57,255,176,0.35); color: var(--accent); background: rgba(57,255,176,0.06); }
+  .pill.tool { border-color: rgba(167,139,250,0.35); color: var(--accent2); background: rgba(167,139,250,0.06); }
+  .pill.soft { border-color: rgba(244,114,182,0.35); color: var(--accent3); background: rgba(244,114,182,0.06); }
+  .pill.lang { border-color: rgba(251,191,36,0.35); color: #fbbf24; background: rgba(251,191,36,0.06); }
+
+  /* ── AI FEATURE CARD ── */
+  .ai-spotlight {
+    background: linear-gradient(135deg, rgba(57,255,176,0.06), rgba(167,139,250,0.06));
+    border: 1px solid rgba(57,255,176,0.2);
+    border-radius: 20px;
+    padding: 36px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ai-spotlight::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+  }
+  .ai-spotlight-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ai-spotlight-title .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+  .ai-spotlight p { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+
+  /* ── INDUSTRIES ── */
+  .industries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .industry-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .industry-card:hover { transform: translateY(-4px); border-color: rgba(57,255,176,0.25); box-shadow: var(--glow); }
+  .industry-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+  .industry-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  /* ── LANGUAGES ── */
+  .lang-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+  .lang-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: all 0.25s;
+  }
+  .lang-card:hover { border-color: rgba(251,191,36,0.35); transform: translateY(-3px); }
+  .lang-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .lang-level {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fbbf24;
+  }
+  .lang-bar { margin-top: 12px; height: 3px; background: rgba(255,255,255,0.06); border-radius: 10px; overflow: hidden; }
+  .lang-fill { height: 100%; background: linear-gradient(90deg, #fbbf24, #f59e0b); border-radius: 10px; transition: width 1s ease; }
+
+  /* ── CONTACT CTA ── */
+  .cta-section {
+    background: linear-gradient(135deg, rgba(57,255,176,0.05), rgba(167,139,250,0.05));
+    border: 1px solid rgba(57,255,176,0.15);
+    border-radius: 24px;
+    padding: 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 80px;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .cta-section h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .cta-section h2 span { color: var(--accent); }
+  .cta-section p { color: var(--muted); font-size: 1rem; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-contacts { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .contact-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .contact-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .contact-chip svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--accent);
+  }
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── GLITCH on hover ── */
+  .hero-name:hover .last {
+    animation: glitch 0.4s steps(2) infinite;
+  }
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 1px); filter: hue-rotate(30deg); }
+    50% { transform: translate(2px, -1px); filter: hue-rotate(-30deg); }
+    75% { transform: translate(-1px, 2px); }
+    100% { transform: translate(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .stats-bar { flex-direction: column; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat:last-child { border-bottom: none; }
+    .cta-section { padding: 40px 24px; }
+    .job { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">E.G.</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:elenagveles@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow reveal">Available for new opportunities</div>
+    <h1 class="hero-name reveal reveal-delay-1">
+      <span>Elena</span>
+      <span class="last">Gvelesiani</span>
+    </h1>
+    <p class="hero-title reveal reveal-delay-2">
+      <strong>Personal & Business Assistant</strong> · <strong>Head of Marketing</strong> · <strong>AI-Powered Operator</strong>
+    </p>
+    <p class="hero-bio reveal reveal-delay-3">
+      7+ years making executives' lives easier and <em>marketing machines run smoother</em>. 
+      I've worked across tech, iGaming, crypto, and event industries — and I actually know how to use 
+      <em>every AI tool</em> that matters. Multilingual. Multi-timezone. Multitasking is my default mode.
+    </p>
+    <div class="hero-actions reveal reveal-delay-4">
+      <a href="mailto:elenagveles@gmail.com" class="btn-primary">Let's work together</a>
+      <a href="tel:+995571190998" class="btn-ghost">+995 571 190 998</a>
+    </div>
+
+    <div class="stats-bar reveal">
+      <div class="stat">
+        <span class="stat-num">7+</span>
+        <span class="stat-label">Years experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Industries</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-label">Languages</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">AI & tech tools</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-tag">Work History</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="section-h2 reveal">Where I've delivered.</h2>
+
+    <div class="timeline">
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <span class="job-company">Mootivation Technologies (Incentli / Celebrio)</span>
+          <span class="job-period">2023 — Present</span>
+        </div>
+        <div class="job-role">Business Assistant · Head of Marketing</div>
+        <ul class="job-bullets">
+          <li>Own all executive operations — scheduling, comms, daily business running — so the CEO stays in flow state</li>
+          <li>Lead end-to-end marketing: SEO strategy, brand identity, content production, and full website management</li>
+          <li>Conduct business analysis and develop partnerships that directly feed growth targets</li>
+          <li>Stepped into project management responsibilities — owning deliverables, timelines, and cross-team coordination</li>
+          <li>Proactively introduced AI-powered workflows that cut research and content time by 60%+</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <span class="job-company">Crypto Traders International</span>
+          <span class="job-period">2020 — 2021</span>
+        </div>
+        <div class="job-role">Personal Assistant · Marketing Manager</div>
+        <ul class="job-bullets">
+          <li>Planned and executed online & offline events — hired staff, negotiated sponsorships, managed full logistics</li>
+          <li>Supported C-level executives in daily operations, strategic planning, and high-stakes communications</li>
+          <li>Managed full-spectrum marketing campaigns: social media, content, branding, and promotional launches</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <span class="job-company">Notifia</span>
+          <span class="job-period">2019 — 2020</span>
+        </div>
+        <div class="job-role">Personal Assistant · Marketing Manager</div>
+        <ul class="job-bullets">
+          <li>Managed social media channels for live clients — grew audiences through strategic, high-engagement content</li>
+          <li>Provided executive support, handled project coordination and sensitive business communications</li>
+          <li>Oversaw SEO, branding, content, and website management simultaneously</li>
+          <li>Collaborated daily with development teams to improve digital performance and presence</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-meta">
+          <span class="job-company">Vostock Capital</span>
+          <span class="job-period">2016 — 2020</span>
+        </div>
+        <div class="job-role">Event Organizer · Coordinator</div>
+        <ul class="job-bullets">
+          <li>Planned and executed large-scale corporate events and conferences end-to-end</li>
+          <li>Coordinated vendors, logistics chains, and client communications under strict deadlines</li>
+          <li>Built a foundation in high-pressure, high-detail work that still drives how I operate today</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-tag">Skills & Tools</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="section-h2 reveal">What I actually know how to use.</h2>
+
+    <!-- AI SPOTLIGHT -->
+    <div class="ai-spotlight reveal">
+      <div class="ai-spotlight-title">
+        <div class="dot"></div>
+        AI-Native Operator — Not Just "familiar with AI"
+      </div>
+      <p>I use AI tools daily as serious force-multipliers: drafting, research, content, automation, and creative production. Here's the full stack:</p>
+      <div class="skill-pills">
+        <span class="pill ai">ChatGPT / GPT-4o</span>
+        <span class="pill ai">Claude (Anthropic)</span>
+        <span class="pill ai">Gemini</span>
+        <span class="pill ai">Perplexity</span>
+        <span class="pill ai">Midjourney</span>
+        <span class="pill ai">DALL-E 3</span>
+        <span class="pill ai">Sora</span>
+        <span class="pill ai">Runway ML</span>
+        <span class="pill ai">ElevenLabs</span>
+        <span class="pill ai">Notion AI</span>
+        <span class="pill ai">GitHub Copilot</span>
+        <span class="pill ai">Kling AI</span>
+        <span class="pill ai">Ideogram</span>
+        <span class="pill ai">Grok</span>
+        <span class="pill ai">Jasper</span>
+      </div>
+    </div>
+
+    <div class="skills-universe">
+
+      <div class="reveal">
+        <div class="skill-group-title">// Business & Productivity Tools</div>
+        <div class="skill-pills">
+          <span class="pill tool">Microsoft 365</span>
+          <span class="pill tool">Google Workspace</span>
+          <span class="pill tool">Notion</span>
+          <span class="pill tool">Asana</span>
+          <span class="pill tool">Trello</span>
+          <span class="pill tool">Slack</span>
+          <span class="pill tool">HubSpot CRM</span>
+          <span class="pill tool">Salesforce</span>
+          <span class="pill tool">ActiveCampaign</span>
+          <span class="pill tool">Airtable</span>
+          <span class="pill tool">ClickUp</span>
+          <span class="pill tool">Zapier</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title">// Marketing & Social Media</div>
+        <div class="skill-pills">
+          <span class="pill tool">Instagram</span>
+          <span class="pill tool">LinkedIn</span>
+          <span class="pill tool">Facebook Ads</span>
+          <span class="pill tool">X (Twitter)</span>
+          <span class="pill tool">YouTube</span>
+          <span class="pill tool">SEO Strategy</span>
+          <span class="pill tool">Content Creation</span>
+          <span class="pill tool">Brand Management</span>
+          <span class="pill tool">Email Marketing</span>
+          <span class="pill tool">Canva</span>
+          <span class="pill tool">Figma (basics)</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title">// Executive & Operational Skills</div>
+        <div class="skill-pills">
+          <span class="pill soft">C-Level Calendar Management</span>
+          <span class="pill soft">Travel Planning</span>
+          <span class="pill soft">Project Management</span>
+          <span class="pill soft">Event Organization</span>
+          <span class="pill soft">Sales & Business Dev</span>
+          <span class="pill soft">Vendor Negotiation</span>
+          <span class="pill soft">Confidential Communications</span>
+          <span class="pill soft">Cross-team Coordination</span>
+          <span class="pill soft">Crisis Management</span>
+          <span class="pill soft">Stakeholder Reporting</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / INDUSTRIES -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="section-tag">Industries & Verticals</span>
+      <div class="section-line"></div>
+    </div>
+    <h2 class="section-h2 reveal">I've been in the room.</h2>
+
+    <div class="industries reveal">
+      <div class="industry-card">
+        <span class="industry-icon">💻</span>
+        <div class="industry-name">Tech & SaaS</div>
+      </div>
+      <div class="industry-card">
+        <span class="industry-icon">🎰</span>
+        <div class="industry-name">iGaming</div>
+      </div>
+      <div class="industry-card">
+        <span class="industry-icon">₿</span>
+        <div class="industry-name">Crypto & Web3</div>
+      </div>
+      <div class="industry-card">
+        <span class="industry-icon">🎪</span>
+        <div class="industry-name">Events & Conferences</div>
+      </div>
+      <div class="industry-card">
+        <span class="industry-icon">💼</span>
+        <div class="industry-name">Finance & Capital</div>
+      </div>
+      <div class="industry-card">
+        <span class="industry-icon">📣</span>
+        <div class="industry-name">Sales & Growth</div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="section-header" style="margin-top: 60px;">
+      <span class="section-tag" style="border-color: rgba(251,191,36,0.3); color: #fbbf24; background: rgba(251,191,36,0.06);">Languages</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="lang-grid reveal">
+      <div class="lang-card">
+        <div class="lang-name">English</div>
+        <div class="lang-level">Native</div>
+        <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Russian</div>
+        <div class="lang-level">Native</div>
+        <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Georgian</div>
+        <div class="lang-level">Native</div>
+        <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Spanish</div>
+        <div class="lang-level">B1 — Intermediate</div>
+        <div class="lang-bar"><div class="lang-fill" style="width: 60%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Ukrainian</div>
+        <div class="lang-level">B1 — Intermediate</div>
+        <div class="lang-bar"><div class="lang-fill" style="width: 60%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Armenian</div>
+        <div class="lang-level">A2 — Elementary</div>
+        <div class="lang-bar"><div class="lang-fill" style="width: 30%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-section reveal">
+      <h2>Let's get to<br><span>work.</span></h2>
+      <p>I make executives more effective, businesses more visible, and chaotic operations run like systems. If you need someone who can do both — the strategy and the execution — that's me.</p>
+      <div class="cta-contacts">
+        <a href="mailto:elenagveles@gmail.com" class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          elenagveles@gmail.com
+        </a>
+        <a href="tel:+995571190998" class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          +995 571 190 998
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="contact-chip">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-name">Elena Gvelesiani</div>
+        <div class="footer-copy">Personal & Business Assistant · Marketing Professional · Tbilisi, Georgia</div>
+        <div class="footer-copy">© 2026</div>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Animate stat numbers on reveal
+  const statNums = document.querySelectorAll('.stat-num');
+  const targets = [7, 4, 6, 20];
+  const suffixes = ['+', '', '', '+'];
+  let animated = false;
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      statNums.forEach((el, i) => {
+        let start = 0;
+        const end = targets[i];
+        const duration = 1200;
+        const step = (timestamp) => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * end) + suffixes[i];
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = end + suffixes[i];
+        };
+        requestAnimationFrame(step);
+      });
+    }
+  }, { threshold: 0.5 });
+
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) statsObserver.observe(statsBar);
+</script>
+</body>
+</html>
