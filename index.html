@@ -1,0 +1,2577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elena Gvelesiani | Executive Operations, Marketing, Project Management</title>
+  <meta name="description" content="Portfolio for Elena Gvelesiani: executive operations, marketing management, and project leadership for fast-moving teams." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f7f6;
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-solid: #ffffff;
+      --surface-2: #e9f0ee;
+      --ink: #101217;
+      --muted: #616977;
+      --line: rgba(16, 18, 23, 0.12);
+      --line-strong: rgba(16, 18, 23, 0.2);
+      --blue: #255cff;
+      --teal: #00a88f;
+      --coral: #ff6847;
+      --gold: #d6a21e;
+      --green: #19a86f;
+      --plum: #7b4dff;
+      --shadow: 0 26px 80px rgba(16, 18, 23, 0.13);
+      --soft-shadow: 0 14px 38px rgba(16, 18, 23, 0.09);
+      --radius: 8px;
+      --max: 1180px;
+      --nav-h: 74px;
+    }
+
+    body[data-theme="night"] {
+      --bg: #0f1217;
+      --surface: rgba(22, 26, 34, 0.86);
+      --surface-solid: #171b24;
+      --surface-2: #202734;
+      --ink: #f5f7fb;
+      --muted: #a8b1c0;
+      --line: rgba(245, 247, 251, 0.13);
+      --line-strong: rgba(245, 247, 251, 0.23);
+      --shadow: 0 26px 80px rgba(0, 0, 0, 0.36);
+      --soft-shadow: 0 14px 38px rgba(0, 0, 0, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Lexend", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(37, 92, 255, 0.09) 0 11%, transparent 11% 38%, rgba(0, 168, 143, 0.08) 38% 54%, transparent 54% 100%),
+        repeating-linear-gradient(90deg, rgba(16, 18, 23, 0.045) 0 1px, transparent 1px 92px),
+        repeating-linear-gradient(0deg, rgba(16, 18, 23, 0.03) 0 1px, transparent 1px 92px),
+        var(--bg);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.34;
+      background:
+        linear-gradient(110deg, transparent 0 18%, rgba(255, 104, 71, 0.09) 18% 19%, transparent 19% 56%, rgba(123, 77, 255, 0.07) 56% 57%, transparent 57%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent 36%, rgba(255, 255, 255, 0.36));
+    }
+
+    body[data-theme="night"]::before {
+      opacity: 0.22;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 3px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      background: linear-gradient(90deg, var(--blue), var(--teal), var(--coral), var(--gold));
+      box-shadow: 0 0 18px rgba(37, 92, 255, 0.32);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 30;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 10px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-solid) 72%, transparent);
+      backdrop-filter: blur(22px) saturate(1.24);
+      box-shadow: var(--soft-shadow);
+      pointer-events: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 218px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--ink), var(--blue) 50%, var(--teal));
+      box-shadow: 0 10px 24px rgba(36, 107, 254, 0.23);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
+      transform: translateX(-120%) rotate(25deg);
+      animation: shine 5.5s ease-in-out infinite;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-role {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a,
+    .button,
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 9px 13px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .button:hover,
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
+      border-color: var(--line);
+    }
+
+    .button.primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), var(--blue));
+      box-shadow: 0 14px 28px rgba(36, 107, 254, 0.22);
+    }
+
+    .button.secondary {
+      background: color-mix(in srgb, var(--surface-solid) 72%, transparent);
+      border-color: var(--line);
+    }
+
+    .theme-toggle {
+      width: 42px;
+      padding: 0;
+      border-color: var(--line);
+      background: color-mix(in srgb, var(--surface-solid) 66%, transparent);
+    }
+
+    .theme-toggle span {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background:
+        linear-gradient(90deg, var(--ink) 0 48%, transparent 48% 100%),
+        var(--gold);
+      box-shadow: inset 0 0 0 1px rgba(16, 18, 23, 0.16);
+    }
+
+    .hero {
+      min-height: auto;
+      display: grid;
+      align-items: start;
+      padding: clamp(42px, 8vh, 78px) 0 34px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 16% 0 auto;
+      z-index: -1;
+      height: 250px;
+      background:
+        linear-gradient(90deg, transparent, rgba(37, 92, 255, 0.08), transparent),
+        repeating-linear-gradient(90deg, transparent 0 38px, rgba(16, 18, 23, 0.06) 38px 39px);
+      transform: skewY(-7deg);
+      opacity: 0.82;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      align-items: end;
+      gap: 34px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-main {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-solid) 72%, transparent);
+      backdrop-filter: blur(16px);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .signal {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(29, 159, 104, 0.13);
+      flex: 0 0 auto;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .hero-name {
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      margin: 0 0 10px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin-bottom: 0;
+      font-size: clamp(44px, 8vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .accent-text {
+      color: transparent;
+      background: linear-gradient(90deg, var(--blue), var(--teal), var(--coral));
+      background-size: 180% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: textShift 9s ease-in-out infinite alternate;
+    }
+
+    .hero-copy {
+      max-width: 740px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      margin: 24px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .ticker {
+      width: min(680px, 100%);
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-solid) 68%, transparent);
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      padding: 9px 0;
+      animation: ticker 28s linear infinite;
+    }
+
+    .ticker span {
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .hero-proof {
+      display: grid;
+      gap: 10px;
+      perspective: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .proof-card {
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--soft-shadow);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .proof-card:hover {
+      border-color: color-mix(in srgb, var(--blue) 36%, var(--line));
+      box-shadow: var(--shadow);
+    }
+
+    .proof-number {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+    }
+
+    .proof-label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .operator-console {
+      padding: 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(16, 18, 23, 0.94), rgba(16, 18, 23, 0.88)),
+        var(--ink);
+      color: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .operator-console::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 10px),
+        linear-gradient(90deg, transparent, rgba(0, 168, 143, 0.12), transparent);
+      pointer-events: none;
+    }
+
+    .console-top,
+    .console-line {
+      position: relative;
+      z-index: 1;
+    }
+
+    .console-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .console-top span {
+      color: #9ff7d1;
+    }
+
+    .console-line {
+      display: grid;
+      grid-template-columns: 9px 1fr auto;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.11);
+      font-size: 13px;
+    }
+
+    .console-line i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 14px rgba(0, 168, 143, 0.75);
+    }
+
+    .console-line span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 48px 0;
+      scroll-margin-top: var(--nav-h);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.62fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    h2 {
+      font-size: clamp(31px, 5vw, 56px);
+      line-height: 1;
+      letter-spacing: 0;
+      margin-bottom: 0;
+    }
+
+    .section-note {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .quote-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.52fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      transition: transform 220ms ease, border-color 220ms ease;
+    }
+
+    .quote-panel p {
+      margin-bottom: 0;
+      max-width: 860px;
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 750;
+    }
+
+    .trait-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      align-content: center;
+    }
+
+    .trait {
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .trait:hover {
+      transform: translateX(4px);
+      border-color: color-mix(in srgb, var(--teal) 42%, var(--line));
+    }
+
+    .role-control {
+      position: sticky;
+      top: 84px;
+      z-index: 12;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      width: fit-content;
+      max-width: 100%;
+      margin: -4px 0 22px;
+      padding: 7px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
+      backdrop-filter: blur(18px) saturate(1.2);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .role-tab {
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform 170ms ease, color 170ms ease, background-color 170ms ease, border-color 170ms ease;
+    }
+
+    .role-tab:hover {
+      transform: translateY(-1px);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .role-tab.active {
+      color: #fff;
+      background: var(--ink);
+      border-color: var(--ink);
+      box-shadow: 0 10px 24px rgba(16, 18, 23, 0.18);
+    }
+
+    .role-stack {
+      display: grid;
+      gap: 28px;
+    }
+
+    .role-stack article {
+      transition: opacity 260ms ease, transform 260ms ease, filter 260ms ease;
+    }
+
+    .role-stack.has-focus article:not(.spotlight) {
+      opacity: 0.54;
+      filter: saturate(0.72);
+    }
+
+    .role-stack.has-focus article.spotlight {
+      transform: translateY(-2px);
+    }
+
+    .role-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .role-title h3 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 44px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .role-title span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .window {
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .window:hover {
+      border-color: color-mix(in srgb, var(--blue) 34%, var(--line-strong));
+    }
+
+    .window-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 46px;
+      padding: 10px 13px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--surface-2) 86%, transparent));
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-dots span {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: rgba(23, 24, 29, 0.23);
+    }
+
+    .window-dots span:nth-child(1) {
+      background: var(--coral);
+    }
+
+    .window-dots span:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .window-dots span:nth-child(3) {
+      background: var(--green);
+    }
+
+    .window-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .window-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tiny-button {
+      min-width: 32px;
+      height: 28px;
+      padding: 0 9px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-solid);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      transition: transform 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .tiny-button:hover {
+      transform: translateY(-1px);
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .marketing-workspace {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .analytics-panel,
+    .content-panel,
+    .campaign-panel,
+    .thread-panel,
+    .mail-content,
+    .project-board {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-solid);
+    }
+
+    .analytics-panel {
+      padding: 14px;
+      min-height: 100%;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .panel-header strong {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: var(--surface-2);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .tab:hover {
+      transform: translateY(-1px);
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .tab.active {
+      color: #fff;
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .metric {
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      min-height: 96px;
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    }
+
+    .metric:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--blue) 34%, var(--line));
+      background: color-mix(in srgb, var(--surface-solid) 64%, var(--surface-2));
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 7px;
+    }
+
+    .bars {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 48px;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .track {
+      height: 10px;
+      border-radius: 99px;
+      background: rgba(23, 24, 29, 0.08);
+      overflow: hidden;
+    }
+
+    .fill {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue), var(--teal), var(--coral));
+      transform: scaleX(0.18);
+      transform-origin: left center;
+      transition: transform 900ms cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .reveal.visible .fill {
+      transform: scaleX(1);
+    }
+
+    .chart {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      align-items: end;
+      gap: 6px;
+      height: 130px;
+      margin-top: 16px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(23, 24, 29, 0.05) 1px, transparent 1px) 0 0 / 100% 33.33%,
+        color-mix(in srgb, var(--surface-2) 58%, var(--surface-solid));
+    }
+
+    .chart span {
+      display: block;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(180deg, var(--blue), var(--teal));
+      min-height: 18px;
+      transform: scaleY(0.14);
+      transform-origin: bottom center;
+      transition: transform 800ms cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .reveal.visible .chart span {
+      transform: scaleY(1);
+    }
+
+    .chart span:nth-child(2) { transition-delay: 60ms; }
+    .chart span:nth-child(3) { transition-delay: 120ms; }
+    .chart span:nth-child(4) { transition-delay: 180ms; }
+    .chart span:nth-child(5) { transition-delay: 240ms; }
+    .chart span:nth-child(6) { transition-delay: 300ms; }
+    .chart span:nth-child(7) { transition-delay: 360ms; }
+    .chart span:nth-child(8) { transition-delay: 420ms; }
+    .chart span:nth-child(9) { transition-delay: 480ms; }
+    .chart span:nth-child(10) { transition-delay: 540ms; }
+    .chart span.is-hot {
+      background: linear-gradient(180deg, var(--coral), var(--gold));
+    }
+
+    .marketing-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .content-panel,
+    .campaign-panel,
+    .thread-panel {
+      padding: 13px;
+    }
+
+    .ig-post {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--surface-solid);
+    }
+
+    .ig-top {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--coral), var(--gold), var(--blue));
+    }
+
+    .post-visual {
+      min-height: 150px;
+      display: grid;
+      align-content: end;
+      padding: 14px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(23, 24, 29, 0.84), rgba(36, 107, 254, 0.70)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px 16px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 0 38%, rgba(255, 255, 255, 0.34) 45%, transparent 52% 100%);
+      transform: translateX(-100%);
+      animation: shine 6.5s ease-in-out infinite;
+    }
+
+    .post-visual strong {
+      max-width: 13ch;
+      font-size: 28px;
+      line-height: 0.98;
+      letter-spacing: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .post-caption {
+      padding: 11px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .thread-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+      transition: transform 160ms ease, opacity 160ms ease;
+    }
+
+    .thread-item:hover {
+      transform: translateX(3px);
+    }
+
+    .thread-item:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .thread-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .thread-copy strong,
+    .campaign-step strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .thread-copy span,
+    .campaign-step span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .campaign-lane {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .campaign-step {
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .campaign-step:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--coral) 38%, var(--line));
+    }
+
+    .project-shell {
+      padding: 14px;
+    }
+
+    .board-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .board-title {
+      display: grid;
+      gap: 2px;
+    }
+
+    .board-title strong {
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .board-title span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .board-filters {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .filter {
+      padding: 7px 9px;
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .filter:hover {
+      transform: translateY(-1px);
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .filter.active {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .project-board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      padding: 10px;
+      background: color-mix(in srgb, var(--surface-2) 66%, var(--surface-solid));
+    }
+
+    .board-column {
+      display: grid;
+      align-content: start;
+      gap: 9px;
+      padding: 10px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface-solid) 78%, transparent);
+      min-height: 300px;
+      transition: background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .board-column:hover {
+      border-color: color-mix(in srgb, var(--teal) 32%, var(--line));
+    }
+
+    .column-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .count {
+      min-width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 99px;
+      color: var(--ink);
+      background: color-mix(in srgb, var(--surface-2) 78%, var(--surface-solid));
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
+    .task-card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-solid);
+      box-shadow: 0 8px 20px rgba(39, 31, 18, 0.06);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .task-card:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--blue) 34%, var(--line));
+      box-shadow: var(--soft-shadow);
+    }
+
+    .task-card strong {
+      display: block;
+      letter-spacing: 0;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .task-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .task-tags {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .task-tag {
+      padding: 5px 7px;
+      border-radius: var(--radius);
+      background: rgba(36, 107, 254, 0.1);
+      color: #1d57d4;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .task-tag.green {
+      color: #14754d;
+      background: rgba(29, 159, 104, 0.12);
+    }
+
+    .task-tag.coral {
+      color: #b34f2d;
+      background: rgba(230, 106, 63, 0.12);
+    }
+
+    .ops-workspace {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: 560px;
+    }
+
+    .mail-sidebar {
+      border-right: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface-2) 72%, var(--surface-solid));
+      padding: 14px;
+    }
+
+    .compose {
+      width: 100%;
+      min-height: 40px;
+      border: 0;
+      border-radius: var(--radius);
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .mail-tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      width: 100%;
+      border: 1px solid transparent;
+      padding: 10px;
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: transform 160ms ease, color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .mail-tab:hover {
+      transform: translateX(3px);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .mail-tab.active {
+      color: var(--ink);
+      background: var(--surface-solid);
+      box-shadow: 0 8px 20px rgba(39, 31, 18, 0.06);
+    }
+
+    .mail-tab small {
+      color: inherit;
+      font-size: 11px;
+      opacity: 0.78;
+    }
+
+    .mail-content {
+      border: 0;
+      border-radius: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .mail-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-solid);
+    }
+
+    .search {
+      flex: 1;
+      min-height: 38px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface-2) 72%, var(--surface-solid));
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      min-height: 100%;
+    }
+
+    .email-list {
+      padding: 12px;
+      display: grid;
+      align-content: start;
+      gap: 9px;
+      border-right: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface-2) 58%, var(--surface-solid));
+    }
+
+    .email-row {
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 10px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface-solid);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .email-row:hover {
+      transform: translateX(3px);
+      border-color: color-mix(in srgb, var(--teal) 35%, var(--line));
+      box-shadow: var(--soft-shadow);
+    }
+
+    .sender-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 850;
+      background: linear-gradient(135deg, var(--ink), var(--teal));
+    }
+
+    .email-subject {
+      display: block;
+      margin-bottom: 3px;
+      letter-spacing: 0;
+    }
+
+    .email-preview {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .email-status {
+      padding: 6px 8px;
+      border-radius: var(--radius);
+      color: #1d57d4;
+      background: rgba(36, 107, 254, 0.1);
+      font-size: 11px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .priority-panel {
+      padding: 14px;
+      background: var(--surface-solid);
+    }
+
+    .priority-panel h4 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+    }
+
+    .check {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 9px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-2) 70%, var(--surface-solid));
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .check:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--green) 36%, var(--line));
+    }
+
+    .checkmark {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+    }
+
+    .checkmark::before {
+      content: "";
+      width: 7px;
+      height: 12px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .check strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .check span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--soft-shadow);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--blue) 28%, var(--line));
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-date {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .timeline-content h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .company {
+      color: var(--muted);
+      margin: 5px 0 14px;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      color: #30333b;
+      font-size: 14px;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 16px;
+    }
+
+    .skill-panel {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .skill-panel h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .tag-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-2) 70%, var(--surface-solid));
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--plum) 34%, var(--line));
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .language {
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--surface-2) 70%, var(--surface-solid));
+    }
+
+    .language strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .language span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card .section-kicker,
+    .contact-card .section-note {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .contact-card h2 {
+      color: #fff;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 17px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 9px 11px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      background: rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .contact-card .button.primary {
+      background: #fff;
+      color: var(--ink);
+      box-shadow: none;
+      white-space: nowrap;
+    }
+
+    footer {
+      padding: 14px 0 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 650ms ease, transform 650ms cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    [data-tilt] {
+      will-change: transform;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 5px rgba(29, 159, 104, 0.13);
+      }
+
+      50% {
+        transform: scale(0.92);
+        box-shadow: 0 0 0 9px rgba(29, 159, 104, 0.08);
+      }
+    }
+
+    @keyframes shine {
+      0%, 42% {
+        transform: translateX(-120%) rotate(25deg);
+      }
+
+      62%, 100% {
+        transform: translateX(130%) rotate(25deg);
+      }
+    }
+
+    @keyframes textShift {
+      from {
+        background-position: 0% 50%;
+      }
+
+      to {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-layout,
+      .section-head,
+      .quote-panel,
+      .marketing-workspace,
+      .skills-layout,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-proof {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .operator-console {
+        grid-column: 1 / -1;
+      }
+
+      .project-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .ops-workspace {
+        grid-template-columns: 180px minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 8px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 5px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .nav-links a,
+      .button,
+      .theme-toggle {
+        min-height: 34px;
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+
+      .theme-toggle {
+        width: 36px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 28px;
+      }
+
+      .ticker {
+        mask-image: none;
+      }
+
+      .hero-proof,
+      .metric-grid,
+      .project-board,
+      .mail-grid,
+      .timeline-card,
+      .language-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .role-title,
+      .board-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .role-control {
+        position: static;
+        width: 100%;
+      }
+
+      .role-tab {
+        flex: 1 1 140px;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr;
+      }
+
+      .ops-workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .mail-sidebar {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .email-list {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .email-row {
+        grid-template-columns: 34px 1fr;
+      }
+
+      .email-status {
+        grid-column: 2;
+        width: fit-content;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .brand {
+        gap: 9px;
+      }
+
+      .brand-role {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(38px, 13vw, 54px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Elena Gvelesiani home">
+          <div class="brand-mark">EG</div>
+          <div>
+            <div class="brand-name">Elena Gvelesiani</div>
+            <div class="brand-role">Executive Operations / Marketing / Projects</div>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#roles">Expertise</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle visual mode"><span></span></button>
+          <a href="#contact" class="button primary">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-main reveal visible">
+          <div class="hero-kicker"><span class="signal"></span> Available for high-impact business, marketing, and project roles</div>
+          <p class="hero-name">Elena Gvelesiani</p>
+          <h1>The person you hire when execution <span class="accent-text">has to happen.</span></h1>
+          <p class="hero-copy">I help founders, executives, and growing teams level up the way work gets done: clear priorities, polished marketing, fast coordination, and calm follow-through.</p>
+          <div class="hero-actions">
+            <a href="#experience" class="button primary">View experience</a>
+            <a href="#contact" class="button secondary">Let's connect</a>
+          </div>
+          <div class="ticker" aria-label="Core role keywords">
+            <div class="ticker-track">
+              <span>Executive operations</span>
+              <span>Marketing management</span>
+              <span>Project leadership</span>
+              <span>AI workflows</span>
+              <span>Founder support</span>
+              <span>CRM systems</span>
+              <span>Launch execution</span>
+              <span>Global communication</span>
+              <span>Executive operations</span>
+              <span>Marketing management</span>
+              <span>Project leadership</span>
+              <span>AI workflows</span>
+              <span>Founder support</span>
+              <span>CRM systems</span>
+              <span>Launch execution</span>
+              <span>Global communication</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-proof reveal visible" aria-label="Professional highlights">
+          <div class="proof-card" data-tilt>
+            <span class="proof-number count-up" data-count="8" data-suffix="+">0</span>
+            <div class="proof-label">Years across operations, marketing, events, and execution</div>
+          </div>
+          <div class="proof-card" data-tilt>
+            <span class="proof-number count-up" data-count="6">0</span>
+            <div class="proof-label">Languages for international communication and coordination</div>
+          </div>
+          <div class="proof-card" data-tilt>
+            <span class="proof-number">Unlimited</span>
+            <div class="proof-label">Tools, AI workflows, systems, and software learned fast</div>
+          </div>
+          <div class="operator-console" data-tilt>
+            <div class="console-top">Availability <span>Open</span></div>
+            <div class="console-line"><i></i> Priorities clarified <span>09:10</span></div>
+            <div class="console-line"><i></i> Campaign assets checked <span>11:35</span></div>
+            <div class="console-line"><i></i> Founder brief prepared <span>14:20</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Introduction</div>
+            <h2>Polished. Proactive. Highly reliable.</h2>
+          </div>
+          <p class="section-note">A business operator with a background across executive support, marketing management, event coordination, project execution, and digital systems.</p>
+        </div>
+        <div class="quote-panel reveal" data-tilt>
+          <p>I am the kind of person companies hire when they need someone to think clearly, move fast, communicate well, and make sure nothing important gets dropped.</p>
+          <div class="trait-list" aria-label="Working traits">
+            <div class="trait">Sharp communication</div>
+            <div class="trait">Strong ownership</div>
+            <div class="trait">Fast tool adoption</div>
+            <div class="trait">Calm execution</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Expertise</div>
+            <h2>Three roles, one high-output operator.</h2>
+          </div>
+          <p class="section-note">Selected strengths across marketing management, project leadership, and executive operations, presented through the kind of systems Elena can confidently run.</p>
+        </div>
+
+        <div class="role-control reveal" role="tablist" aria-label="Role view selector">
+          <button class="role-tab active" type="button" role="tab" aria-selected="true" data-role-target="marketing">Marketing Manager</button>
+          <button class="role-tab" type="button" role="tab" aria-selected="false" data-role-target="project">Project Manager</button>
+          <button class="role-tab" type="button" role="tab" aria-selected="false" data-role-target="ops">Executive Operations</button>
+        </div>
+
+        <div class="role-stack">
+          <article class="reveal spotlight" id="marketing" data-role-panel="marketing">
+            <div class="role-title">
+              <h3>Marketing Manager</h3>
+              <span>Analytics / content / CRM / launch execution</span>
+            </div>
+            <div class="window" data-tilt>
+              <div class="window-top">
+                <div class="window-dots"><span></span><span></span><span></span></div>
+                <div class="window-label">Marketing Performance Dashboard</div>
+                <div class="window-actions">
+                  <div class="tiny-button">SEO</div>
+                  <div class="tiny-button">AI</div>
+                </div>
+              </div>
+              <div class="marketing-workspace">
+                <div class="analytics-panel">
+                  <div class="panel-header">
+                    <strong>Analytics</strong>
+                    <div class="tabs">
+                      <button class="tab active" type="button">Growth</button>
+                      <button class="tab" type="button">Content</button>
+                      <button class="tab" type="button">CRM</button>
+                    </div>
+                  </div>
+                  <div class="metric-grid">
+                    <div class="metric">
+                      <strong>SEO</strong>
+                      <span>Keyword research, pages, search visibility, and performance checks</span>
+                    </div>
+                    <div class="metric">
+                      <strong>CRM</strong>
+                      <span>Segmentation, pipelines, follow-ups, lead tracking, and clean handoffs</span>
+                    </div>
+                    <div class="metric">
+                      <strong>AI</strong>
+                      <span>Faster research, sharper drafts, content systems, and creative testing</span>
+                    </div>
+                  </div>
+                  <div class="bars" aria-label="Marketing tool strengths">
+                    <div class="bar-row">
+                      <span>HubSpot / CRM</span>
+                      <div class="track"><span class="fill" style="width: 94%"></span></div>
+                      <strong>94</strong>
+                    </div>
+                    <div class="bar-row">
+                      <span>Analytics</span>
+                      <div class="track"><span class="fill" style="width: 91%"></span></div>
+                      <strong>91</strong>
+                    </div>
+                    <div class="bar-row">
+                      <span>SEO tools</span>
+                      <div class="track"><span class="fill" style="width: 89%"></span></div>
+                      <strong>89</strong>
+                    </div>
+                    <div class="bar-row">
+                      <span>AI stack</span>
+                      <div class="track"><span class="fill" style="width: 96%"></span></div>
+                      <strong>96</strong>
+                    </div>
+                  </div>
+                  <div class="chart" aria-label="Campaign momentum chart">
+                    <span style="height: 35%"></span>
+                    <span style="height: 48%"></span>
+                    <span style="height: 42%"></span>
+                    <span style="height: 61%"></span>
+                    <span style="height: 58%"></span>
+                    <span style="height: 72%"></span>
+                    <span style="height: 69%"></span>
+                    <span style="height: 84%"></span>
+                    <span style="height: 78%"></span>
+                    <span style="height: 92%"></span>
+                  </div>
+                </div>
+
+                <div class="marketing-side">
+                  <div class="content-panel">
+                    <div class="panel-header">
+                      <strong>Social Campaign Asset</strong>
+                      <button class="tab active" type="button">Polished</button>
+                    </div>
+                    <div class="ig-post">
+                      <div class="ig-top"><span class="avatar"></span> Elena for growth teams</div>
+                      <div class="post-visual">
+                        <strong>Make the message worth the scroll.</strong>
+                      </div>
+                      <div class="post-caption">Visual direction, caption structure, audience hook, brand polish, and a clear CTA built into one publishable post.</div>
+                    </div>
+                  </div>
+
+                  <div class="thread-panel">
+                    <div class="panel-header">
+                      <strong>Thought Leadership Series</strong>
+                      <button class="tab" type="button">Strategic</button>
+                    </div>
+                    <div class="thread-item">
+                      <div class="thread-number">1</div>
+                      <div class="thread-copy">
+                        <strong>Turn ideas into campaigns.</strong>
+                        <span>Positioning, content angles, timelines, and approval flow.</span>
+                      </div>
+                    </div>
+                    <div class="thread-item">
+                      <div class="thread-number">2</div>
+                      <div class="thread-copy">
+                        <strong>Keep the brand consistent.</strong>
+                        <span>Voice, visuals, landing pages, social posts, email, and follow-ups.</span>
+                      </div>
+                    </div>
+                    <div class="thread-item">
+                      <div class="thread-number">3</div>
+                      <div class="thread-copy">
+                        <strong>Measure what matters.</strong>
+                        <span>Traffic, engagement, conversion signals, and what to improve next.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="campaign-panel">
+                    <div class="panel-header">
+                      <strong>Campaign System</strong>
+                      <button class="tab active" type="button">Active</button>
+                    </div>
+                    <div class="campaign-lane">
+                      <div class="campaign-step">
+                        <strong>Hook</strong>
+                        <span>Find the emotional reason the audience should care.</span>
+                      </div>
+                      <div class="campaign-step">
+                        <strong>Value</strong>
+                        <span>Translate product strengths into clear, marketable benefits.</span>
+                      </div>
+                      <div class="campaign-step">
+                        <strong>Follow-up</strong>
+                        <span>Keep leads warm with CRM notes, reminders, and clean next steps.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal" id="project" data-role-panel="project">
+            <div class="role-title">
+              <h3>Project Manager</h3>
+              <span>Boards / priorities / deadlines / delivery</span>
+            </div>
+            <div class="window" data-tilt>
+              <div class="window-top">
+                <div class="window-dots"><span></span><span></span><span></span></div>
+                <div class="window-label">Project Delivery Dashboard</div>
+                <div class="window-actions">
+                  <div class="tiny-button">New</div>
+                  <div class="tiny-button">View</div>
+                </div>
+              </div>
+              <div class="project-shell">
+                <div class="board-header">
+                  <div class="board-title">
+                    <strong>Delivery Pipeline</strong>
+                    <span>Campaigns, events, launches, team handoffs, and follow-through</span>
+                  </div>
+                  <div class="board-filters">
+                    <button class="filter active" type="button">Active</button>
+                    <button class="filter" type="button">Priority</button>
+                    <button class="filter" type="button">Owner</button>
+                    <button class="filter" type="button">Due date</button>
+                  </div>
+                </div>
+                <div class="project-board">
+                  <div class="board-column">
+                    <div class="column-title">Planning <span class="count">2</span></div>
+                    <div class="task-card">
+                      <strong>Campaign planning</strong>
+                      <span>Scope, stakeholders, assets, and launch sequence mapped before execution.</span>
+                      <div class="task-tags"><span class="task-tag">Scope</span><span class="task-tag coral">Marketing</span></div>
+                    </div>
+                    <div class="task-card">
+                      <strong>Event run-of-show</strong>
+                      <span>Logistics, staffing, sponsorship notes, and vendor communication organized.</span>
+                      <div class="task-tags"><span class="task-tag green">Events</span></div>
+                    </div>
+                  </div>
+                  <div class="board-column">
+                    <div class="column-title">In Progress <span class="count">3</span></div>
+                    <div class="task-card">
+                      <strong>Website updates</strong>
+                      <span>Content, design notes, SEO checks, and development handoff moving together.</span>
+                      <div class="task-tags"><span class="task-tag">Web</span><span class="task-tag green">SEO</span></div>
+                    </div>
+                    <div class="task-card">
+                      <strong>Partner outreach</strong>
+                      <span>Prospects researched, notes structured, follow-ups scheduled, replies tracked.</span>
+                      <div class="task-tags"><span class="task-tag coral">Growth</span></div>
+                    </div>
+                    <div class="task-card">
+                      <strong>Internal workflow cleanup</strong>
+                      <span>Turning scattered task ownership into one visible operating rhythm.</span>
+                      <div class="task-tags"><span class="task-tag">Ops</span></div>
+                    </div>
+                  </div>
+                  <div class="board-column">
+                    <div class="column-title">Review <span class="count">2</span></div>
+                    <div class="task-card">
+                      <strong>Campaign QA</strong>
+                      <span>Links, copy, schedule, visuals, and final approvals checked before launch.</span>
+                      <div class="task-tags"><span class="task-tag green">QA</span></div>
+                    </div>
+                    <div class="task-card">
+                      <strong>Executive update</strong>
+                      <span>Clear summary of progress, blockers, decisions, and next actions prepared.</span>
+                      <div class="task-tags"><span class="task-tag">Report</span></div>
+                    </div>
+                  </div>
+                  <div class="board-column">
+                    <div class="column-title">Done <span class="count">4</span></div>
+                    <div class="task-card">
+                      <strong>4-step task handoff system</strong>
+                      <span>Owner, deadline, context, next action: fewer repeated questions and cleaner follow-up.</span>
+                      <div class="task-tags"><span class="task-tag green">Optimized</span></div>
+                    </div>
+                    <div class="task-card">
+                      <strong>20+ moving event pieces aligned</strong>
+                      <span>Vendors, guests, staffing, agenda, materials, and sponsor details kept on track.</span>
+                      <div class="task-tags"><span class="task-tag coral">Delivered</span></div>
+                    </div>
+                    <div class="task-card">
+                      <strong>Weekly priority rhythm</strong>
+                      <span>Leadership decisions translated into visible tasks and accountable next steps.</span>
+                      <div class="task-tags"><span class="task-tag">Clarity</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="reveal" id="ops" data-role-panel="ops">
+            <div class="role-title">
+              <h3>Executive Operations</h3>
+              <span>Inbox / calendar / logistics / priorities</span>
+            </div>
+            <div class="window" data-tilt>
+              <div class="window-top">
+                <div class="window-dots"><span></span><span></span><span></span></div>
+                <div class="window-label">Executive Inbox</div>
+                <div class="window-actions">
+                  <div class="tiny-button">R</div>
+                  <div class="tiny-button">S</div>
+                </div>
+              </div>
+              <div class="ops-workspace">
+                <aside class="mail-sidebar">
+                  <button class="compose">New Brief</button>
+                  <button class="mail-tab active" type="button">Inbox <small>12</small></button>
+                  <button class="mail-tab" type="button">Calendar <small>6</small></button>
+                  <button class="mail-tab" type="button">Travel &amp; Logistics <small>4</small></button>
+                  <button class="mail-tab" type="button">Partnerships <small>8</small></button>
+                  <button class="mail-tab" type="button">Operations <small>9</small></button>
+                  <button class="mail-tab" type="button">Documents <small>5</small></button>
+                  <button class="mail-tab" type="button">Events <small>3</small></button>
+                </aside>
+
+                <div class="mail-content">
+                  <div class="mail-toolbar">
+                    <div class="search">Executive priorities, approvals, travel, partners</div>
+                    <div class="tabs">
+                      <button class="tab active" type="button">Today</button>
+                      <button class="tab" type="button">Urgent</button>
+                    </div>
+                  </div>
+
+                  <div class="mail-grid">
+                    <div class="email-list">
+                      <div class="email-row">
+                        <div class="sender-dot">P</div>
+                        <div>
+                          <strong class="email-subject">Strategic partnership proposal</strong>
+                          <div class="email-preview">Proposal structure drafted, qualified replies screened, approval-ready response queued.</div>
+                        </div>
+                        <span class="email-status">Approval-ready</span>
+                      </div>
+                      <div class="email-row">
+                        <div class="sender-dot">C</div>
+                        <div>
+                          <strong class="email-subject">Calendar conflict resolved</strong>
+                          <div class="email-preview">Priority meeting protected, lower-impact call moved, brief prepared for the founder.</div>
+                        </div>
+                        <span class="email-status">Handled</span>
+                      </div>
+                      <div class="email-row">
+                        <div class="sender-dot">T</div>
+                        <div>
+                          <strong class="email-subject">Travel and logistics plan</strong>
+                          <div class="email-preview">Route, timing, accommodation, confirmation notes, and contingency details organized.</div>
+                        </div>
+                        <span class="email-status">Confirmed</span>
+                      </div>
+                      <div class="email-row">
+                        <div class="sender-dot">O</div>
+                        <div>
+                          <strong class="email-subject">Operations follow-up</strong>
+                          <div class="email-preview">Open loops gathered into one priority list with owners, deadlines, and next actions.</div>
+                        </div>
+                        <span class="email-status">Updated</span>
+                      </div>
+                    </div>
+
+                    <aside class="priority-panel">
+                      <h4>Today's executive priorities</h4>
+                      <div class="checklist">
+                        <div class="check">
+                          <div class="checkmark" aria-hidden="true"></div>
+                          <div>
+                            <strong>Protect focus time</strong>
+                            <span>Calendar cleaned around the decisions that matter most.</span>
+                          </div>
+                        </div>
+                        <div class="check">
+                          <div class="checkmark" aria-hidden="true"></div>
+                          <div>
+                            <strong>Prepare approvals</strong>
+                            <span>Drafts, links, context, and recommendation ready.</span>
+                          </div>
+                        </div>
+                        <div class="check">
+                          <div class="checkmark" aria-hidden="true"></div>
+                          <div>
+                            <strong>Close open loops</strong>
+                            <span>Follow-ups sent, blockers named, owners clarified.</span>
+                          </div>
+                        </div>
+                        <div class="check">
+                          <div class="checkmark" aria-hidden="true"></div>
+                          <div>
+                            <strong>Keep leadership briefed</strong>
+                            <span>Clean summaries instead of scattered updates.</span>
+                          </div>
+                        </div>
+                      </div>
+                    </aside>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2>Professional background.</h2>
+          </div>
+          <p class="section-note">A record of supporting founders, managing marketing work, coordinating operations, and keeping complex execution moving.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card reveal" data-tilt>
+            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-content">
+              <h3>Business Assistant / Head of Marketing</h3>
+              <div class="company">Mootivation Technologies (Incentli / Celebrio)</div>
+              <ul class="bullet-list">
+                <li>Support executive operations while structuring and advancing daily business priorities.</li>
+                <li>Lead marketing initiatives across SEO, branding, content creation, and website management.</li>
+                <li>Identify partnership opportunities and contribute business analysis for growth.</li>
+                <li>Organize online and offline events, including staffing and sponsorship coordination.</li>
+                <li>Improve internal processes through initiative, adaptability, and strong execution.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal" data-tilt>
+            <div class="timeline-date">2020 - 2021</div>
+            <div class="timeline-content">
+              <h3>Personal Assistant / Marketing Manager</h3>
+              <div class="company">Crypto Traders International</div>
+              <ul class="bullet-list">
+                <li>Assisted leadership with daily operations, organization, and strategic coordination.</li>
+                <li>Managed marketing campaigns across branding, content, social media, and promotions.</li>
+                <li>Supported audience growth through engaging digital communication.</li>
+                <li>Balanced executive support with hands-on marketing execution.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal" data-tilt>
+            <div class="timeline-date">2019 - 2020</div>
+            <div class="timeline-content">
+              <h3>Personal Assistant / Marketing Manager</h3>
+              <div class="company">Notifia</div>
+              <ul class="bullet-list">
+                <li>Provided executive support, business communications, and project coordination.</li>
+                <li>Managed marketing work across SEO, branding, content, and website updates.</li>
+                <li>Worked with development teams to strengthen digital performance and presence.</li>
+                <li>Handled multiple business and marketing responsibilities in a dynamic environment.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-card reveal" data-tilt>
+            <div class="timeline-date">2016 - 2020</div>
+            <div class="timeline-content">
+              <h3>Event Organizer / Coordinator</h3>
+              <div class="company">Vostock Capital</div>
+              <ul class="bullet-list">
+                <li>Planned and executed corporate conferences and business events.</li>
+                <li>Coordinated logistics, vendors, and client communication end to end.</li>
+                <li>Delivered organized, polished event experiences with strong attention to detail.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Skills &amp; Tools</div>
+            <h2>Digitally fluent, operationally sharp.</h2>
+          </div>
+          <p class="section-note">Modern business support across communication, systems, software, AI tools, marketing platforms, and multilingual coordination.</p>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-panel reveal" data-tilt>
+            <h3>Tool stack</h3>
+            <div class="tag-wrap">
+              <span class="tag">Google Workspace</span>
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Asana</span>
+              <span class="tag">Trello</span>
+              <span class="tag">HubSpot</span>
+              <span class="tag">Salesforce</span>
+              <span class="tag">ActiveCampaign</span>
+              <span class="tag">Google Analytics</span>
+              <span class="tag">SEO tools</span>
+              <span class="tag">ChatGPT</span>
+              <span class="tag">Gemini</span>
+              <span class="tag">Sora</span>
+              <span class="tag">Perplexity</span>
+              <span class="tag">AI research workflows</span>
+              <span class="tag">Content systems</span>
+            </div>
+          </div>
+
+          <div class="skill-panel reveal" data-tilt>
+            <h3>Languages &amp; education</h3>
+            <div class="language-grid">
+              <div class="language"><strong>English</strong><span>Native</span></div>
+              <div class="language"><strong>Russian</strong><span>Native</span></div>
+              <div class="language"><strong>Georgian</strong><span>Native</span></div>
+              <div class="language"><strong>Spanish</strong><span>B1</span></div>
+              <div class="language"><strong>Ukrainian</strong><span>B1</span></div>
+              <div class="language"><strong>Armenian</strong><span>A2</span></div>
+            </div>
+            <div style="height: 14px"></div>
+            <div class="language">
+              <strong>Bachelor of Business Management</strong>
+              <span>Georgian National University, 2016 - 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>Let's build something exceptional.</h2>
+            <p class="section-note">Open to executive support, business operations, marketing management, and project management roles.</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:elenagveles@gmail.com">elenagveles@gmail.com</a>
+              <a class="contact-link" href="tel:+995571190998">+995 571 190 998</a>
+              <span class="contact-link">LinkedIn available on request</span>
+            </div>
+          </div>
+          <a href="mailto:elenagveles@gmail.com" class="button primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Elena Gvelesiani - Executive Operations, Marketing Management, Project Leadership</div>
+  </footer>
+
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+      window.addEventListener("load", () => window.scrollTo(0, 0), { once: true });
+    }
+
+    const progress = document.querySelector(".scroll-progress");
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const value = max > 0 ? window.scrollY / max : 0;
+      progress.style.transform = `scaleX(${value})`;
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+    const countObserver = new IntersectionObserver((entries, activeObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const element = entry.target;
+        const target = Number(element.dataset.count || 0);
+        const suffix = element.dataset.suffix || "";
+        const start = performance.now();
+        const duration = 900;
+
+        const animate = (time) => {
+          const progressValue = Math.min((time - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progressValue, 3);
+          element.textContent = `${Math.round(target * eased)}${suffix}`;
+          if (progressValue < 1) requestAnimationFrame(animate);
+        };
+
+        requestAnimationFrame(animate);
+        activeObserver.unobserve(element);
+      });
+    }, { threshold: 0.7 });
+
+    document.querySelectorAll(".count-up").forEach((element) => countObserver.observe(element));
+
+    const themeToggle = document.querySelector(".theme-toggle");
+    const savedTheme = localStorage.getItem("elena-theme");
+    if (savedTheme) document.body.dataset.theme = savedTheme;
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.dataset.theme === "night" ? "" : "night";
+      if (nextTheme) {
+        document.body.dataset.theme = nextTheme;
+        localStorage.setItem("elena-theme", nextTheme);
+      } else {
+        delete document.body.dataset.theme;
+        localStorage.removeItem("elena-theme");
+      }
+    });
+
+    document.querySelectorAll(".tabs").forEach((group) => {
+      group.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target.closest(".tab") : null;
+        if (!target) return;
+
+        group.querySelectorAll(".tab").forEach((tab) => tab.classList.remove("active"));
+        target.classList.add("active");
+
+        const panel = group.closest(".analytics-panel, .content-panel, .thread-panel, .campaign-panel, .mail-toolbar");
+        panel?.querySelectorAll(".chart span").forEach((bar, index) => {
+          bar.classList.toggle("is-hot", (index + target.textContent.length) % 3 === 0);
+        });
+      });
+    });
+
+    document.querySelectorAll(".board-filters").forEach((group) => {
+      group.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target.closest(".filter") : null;
+        if (!target) return;
+        group.querySelectorAll(".filter").forEach((filter) => filter.classList.remove("active"));
+        target.classList.add("active");
+      });
+    });
+
+    document.querySelectorAll(".mail-sidebar").forEach((sidebar) => {
+      sidebar.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target.closest(".mail-tab") : null;
+        if (!target) return;
+        sidebar.querySelectorAll(".mail-tab").forEach((tab) => tab.classList.remove("active"));
+        target.classList.add("active");
+      });
+    });
+
+    const roleStack = document.querySelector(".role-stack");
+    const roleTabs = document.querySelectorAll(".role-tab");
+    const rolePanels = document.querySelectorAll("[data-role-panel]");
+
+    roleTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        roleTabs.forEach((item) => {
+          item.classList.remove("active");
+          item.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+        roleStack.classList.add("has-focus");
+
+        rolePanels.forEach((panel) => {
+          panel.classList.toggle("spotlight", panel.dataset.rolePanel === tab.dataset.roleTarget);
+        });
+
+        document.getElementById(tab.dataset.roleTarget)?.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      });
+    });
+
+    const tiltItems = document.querySelectorAll("[data-tilt]");
+    tiltItems.forEach((item) => {
+      item.addEventListener("pointermove", (event) => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const rect = item.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        item.style.transform = `perspective(900px) rotateX(${y * -3.5}deg) rotateY(${x * 3.5}deg) translateY(-2px)`;
+      });
+
+      item.addEventListener("pointerleave", () => {
+        item.style.transform = "";
+      });
+    });
+  </script>
+</body>
+</html>
